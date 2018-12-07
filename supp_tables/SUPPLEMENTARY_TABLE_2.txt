@@ -1,0 +1,252 @@
+Component	GO.ID	Term	Annotated	Significant	Expected	Rank.in.classicFisher	classicFisher	elimFisher	topgoFisher
+1	121	GO:0050427 	3'-phosphoadenosine 5'-phosphosulfate me...	25	3	0.05	15	1.3e-05	1.3e-05	1.3e-05
+2	121	GO:0050853 	          B cell receptor signaling pathway	132	6	0.24	1	1.4e-07	3.8e-05	3.8e-05
+3	121	GO:0006584 	            catecholamine metabolic process	53	3	0.10	25	0.00013	0.00013	0.00013
+4	121	GO:0006068 	                  ethanol catabolic process	12	2	0.02	29	0.00022	0.00022	0.00022
+5	121	GO:0051923 	                                  sulfation	16	2	0.03	32	0.00039	0.00039	0.00039
+6	121	GO:0002250 	                   adaptive immune response	579	5	1.07	61	0.00397	0.00397	0.00095
+7	174	GO:0019886 	antigen processing and presentation of e...	98	5	0.23	10	2.9e-06	2.9e-06	2.9e-06
+8	174	GO:0002503 	peptide antigen assembly with MHC class ...	3	2	0.01	13	1.5e-05	1.5e-05	1.5e-05
+9	174	GO:0042102 	positive regulation of T cell proliferat...	92	4	0.21	22	5.8e-05	5.8e-05	5.8e-05
+10	201	GO:0000122 	negative regulation of transcription fro...	804	12	2.93	37	2.9e-05	2.9e-05	2.9e-05
+11	201	GO:0032743 	positive regulation of interleukin-2 pro...	29	3	0.11	78	0.00016	0.00016	0.00016
+12	201	GO:2001240 	negative regulation of extrinsic apoptot...	35	3	0.13	100	0.00028	0.00028	0.00028
+13	201	GO:0045416 	positive regulation of interleukin-8 bio...	8	2	0.03	112	0.00036	0.00036	0.00036
+14	201	GO:0002634 	    regulation of germinal center formation	9	2	0.03	131	0.00046	0.00046	0.00046
+15	201	GO:0007204 	positive regulation of cytosolic calcium...	284	6	1.04	147	0.00058	0.00058	0.00058
+16	201	GO:0018279 	protein N-linked glycosylation via aspar...	45	3	0.16	149	0.00059	0.00059	0.00059
+17	201	GO:0032729 	positive regulation of interferon-gamma ...	61	4	0.22	61	7.2e-05	7.2e-05	0.00072
+18	201	GO:0002430 	complement receptor mediated signaling p...	12	2	0.04	177	0.00084	0.00084	0.00084
+19	201	GO:0002903 	negative regulation of B cell apoptotic ...	12	2	0.04	178	0.00084	0.00084	0.00084
+20	202	GO:0070098 	chemokine-mediated signaling pathway       	82	5	0.31	8	1.4e-05	1.4e-05	1.4e-05
+21	202	GO:0016525 	 negative regulation of angiogenesis       	96	4	0.36	42	0.00047	0.00047	0.00047
+22	215	GO:0032496 	             response to lipopolysaccharide	323	8	1.18	2	2.2e-05	2.2e-05	1.7e-05
+23	215	GO:0090023 	positive regulation of neutrophil chemot...	30	3	0.11	8	0.00018	0.00018	0.00018
+24	215	GO:0031102 	             neuron projection regeneration	52	3	0.19	25	0.00090	0.00090	0.00090
+25	22	GO:0060337 	        type I interferon signaling pathway	87	8	0.18	1	8.0e-12	8.0e-12	8.0e-12
+26	22	GO:0045071 	negative regulation of viral genome repl...	53	7	0.11	4	1.3e-11	1.3e-11	1.3e-11
+27	22	GO:0051607 	                  defense response to virus	252	9	0.52	9	1.7e-09	1.7e-09	7.0e-10
+28	22	GO:0071276 	           cellular response to cadmium ion	38	3	0.08	48	6.6e-05	6.6e-05	6.6e-05
+29	22	GO:0035455 	               response to interferon-alpha	20	3	0.04	42	9.2e-06	9.2e-06	0.00018
+30	22	GO:0035690 	                  cellular response to drug	60	3	0.12	65	0.00026	0.00026	0.00026
+31	22	GO:0010273 	               detoxification of copper ion	16	2	0.03	71	0.00049	0.00049	0.00049
+32	22	GO:0050794 	             regulation of cellular process	11176	30	23.20	246	0.01305	0.54314	0.00060
+33	22	GO:0046597 	negative regulation of viral entry into ...	18	2	0.04	77	0.00063	0.00063	0.00063
+34	22	GO:0034341 	               response to interferon-gamma	194	4	0.40	81	0.00068	0.00068	0.00071
+35	222	GO:0071276 	           cellular response to cadmium ion	38	4	0.08	13	1.4e-06	1.4e-06	1.4e-06
+36	222	GO:0007267 	                        cell-cell signaling	1228	7	2.69	408	0.01594	0.04331	5.5e-05
+37	222	GO:0045080 	positive regulation of chemokine biosynt...	8	2	0.02	62	0.00013	0.00013	0.00013
+38	222	GO:0006954 	                      inflammatory response	763	11	1.67	12	4.6e-07	0.00023	0.00015
+39	222	GO:0071639 	positive regulation of monocyte chemotac...	10	2	0.02	70	0.00021	0.00021	0.00021
+40	222	GO:0042130 	negative regulation of T cell proliferat...	55	3	0.12	73	0.00023	0.00023	0.00023
+41	222	GO:0010273 	               detoxification of copper ion	16	2	0.04	97	0.00055	0.00055	0.00055
+42	222	GO:0042448 	             progesterone metabolic process	17	2	0.04	104	0.00062	0.00062	0.00062
+43	222	GO:0038111 	   interleukin-7-mediated signaling pathway	19	2	0.04	113	0.00078	0.00078	0.00078
+44	222	GO:0070233 	negative regulation of T cell apoptotic ...	19	2	0.04	114	0.00078	0.00078	0.00078
+45	26	GO:0031146 	SCF-dependent proteasomal ubiquitin-depe...	73	4	0.20	25	4.8e-05	4.8e-05	4.8e-05
+46	26	GO:0008015 	                          blood circulation	496	5	1.36	319	0.01139	0.04351	0.00037
+47	26	GO:0060333 	interferon-gamma-mediated signaling path...	90	6	0.25	3	1.6e-07	0.00063	0.00063
+48	26	GO:0035458 	       cellular response to interferon-beta	15	2	0.04	67	0.00076	0.00076	0.00076
+49	28	GO:0030238 	          male sex determination        14 	2	0.04	5	0.00056	0.00056	0.00056	0.00079
+50	307	GO:0070098 	       chemokine-mediated signaling pathway	82	6	0.32	46	8.2e-07	8.2e-07	8.2e-07
+51	307	GO:0007267 	                        cell-cell signaling	1228	16	4.82	86	1.7e-05	1.7e-05	1.8e-06
+52	307	GO:0030593 	                      neutrophil chemotaxis	89	8	0.35	12	2.1e-09	2.8e-06	1.8e-06
+53	307	GO:0002548 	                        monocyte chemotaxis	63	5	0.25	65	4.8e-06	4.8e-06	4.8e-06
+54	307	GO:0008285 	negative regulation of cell proliferatio...	655	13	2.57	54	1.4e-06	2.2e-05	6.0e-06
+55	307	GO:0010469 	            regulation of receptor activity	572	11	2.25	80	1.3e-05	1.3e-05	1.3e-05
+56	307	GO:0050729 	positive regulation of inflammatory resp...	119	8	0.47	23	2.1e-08	4.3e-06	2.6e-05
+57	307	GO:0010288 	                       response to lead ion	22	4	0.09	55	1.5e-06	1.5e-06	4.3e-05
+58	307	GO:0071356 	cellular response to tumor necrosis fact...	289	7	1.13	122	0.00014	0.00014	0.00014
+59	307	GO:0010575 	positive regulation of vascular endothel...	27	3	0.11	125	0.00016	0.00016	0.00016
+60	307	GO:0090023 	positive regulation of neutrophil chemot...	30	3	0.12	135	0.00022	0.00022	0.00022
+61	307	GO:0035234 	    ectopic germ cell programmed cell death	6	2	0.02	137	0.00023	0.00023	0.00023
+62	307	GO:0048661 	positive regulation of smooth muscle cel...	76	4	0.30	138	0.00023	0.00023	0.00023
+63	307	GO:0032496 	             response to lipopolysaccharide	323	10	1.27	43	5.0e-07	0.00024	0.00024
+64	307	GO:0006954 	                      inflammatory response	763	20	3.00	1	7.1e-12	2.0e-05	0.00027
+65	307	GO:0031622 	    positive regulation of fever generation	7	2	0.03	153	0.00032	0.00032	0.00032
+66	307	GO:0071346 	      cellular response to interferon-gamma	174	5	0.68	186	0.00061	0.00061	0.00032
+67	307	GO:0042102 	positive regulation of T cell proliferat...	92	4	0.36	170	0.00047	0.00047	0.00047
+68	307	GO:0033574 	                   response to testosterone	42	3	0.16	185	0.00060	0.00060	0.00060
+69	307	GO:0032755 	positive regulation of interleukin-6 pro...	73	4	0.29	130	0.00019	0.00019	0.00062
+70	307	GO:0071639 	positive regulation of monocyte chemotac...	10	2	0.04	188	0.00067	0.00067	0.00067
+71	307	GO:0045086 	positive regulation of interleukin-2 bio...	12	2	0.05	210	0.00098	0.00098	0.00098
+72	307	GO:0050872 	             white fat cell differentiation	12	2	0.05	211	0.00098	0.00098	0.00098
+73	312	GO:0060337 	        type I interferon signaling pathway	87	9	0.12	3	1.3e-15	1.3e-15	1.3e-15
+74	312	GO:0051607 	                  defense response to virus	252	12	0.34	2	1.1e-16	6.3e-14	6.3e-14
+75	312	GO:0045071 	negative regulation of viral genome repl...	53	6	0.07	13	6.7e-11	6.7e-11	6.7e-11
+76	312	GO:0060700 	        regulation of ribonuclease activity	9	3	0.01	29	1.8e-07	1.8e-07	1.8e-07
+77	312	GO:0032020 	                  ISG15-protein conjugation	6	2	0.01	40	2.6e-05	2.6e-05	2.6e-05
+78	312	GO:0003374 	dynamin polymerization involved in mitoc...	9	2	0.01	43	6.2e-05	6.2e-05	6.2e-05
+79	312	GO:0035457 	      cellular response to interferon-alpha	10	2	0.01	45	7.8e-05	7.8e-05	7.8e-05
+80	312	GO:0060333 	interferon-gamma-mediated signaling path...	90	3	0.12	48	0.00023	0.00023	0.00023
+81	312	GO:1904707 	positive regulation of vascular smooth m...	27	2	0.04	53	0.00060	0.00060	0.00060
+82	317	GO:0010469 	            regulation of receptor activity	572	13	2.12	25	1.4e-07	1.4e-07	1.4e-07
+83	317	GO:0031295 	                       T cell costimulation	77	5	0.29	58	9.6e-06	9.6e-06	9.6e-06
+84	317	GO:0070098 	       chemokine-mediated signaling pathway	82	5	0.30	65	1.3e-05	1.3e-05	1.3e-05
+85	317	GO:0042102 	positive regulation of T cell proliferat...	92	5	0.34	73	2.3e-05	2.3e-05	2.3e-05
+86	317	GO:0006954 	                      inflammatory response	763	10	2.82	160	0.00047	0.00047	7.2e-05
+87	317	GO:0007267 	                        cell-cell signaling	1228	12	4.55	231	0.00166	0.00452	0.00011
+88	317	GO:0008284 	positive regulation of cell proliferatio...	862	18	3.19	10	1.3e-09	1.7e-06	0.00016
+89	317	GO:0051085 	chaperone mediated protein folding requi...	29	3	0.11	116	0.00017	0.00017	0.00017
+90	317	GO:0090023 	positive regulation of neutrophil chemot...	30	3	0.11	120	0.00018	0.00018	0.00018
+91	317	GO:0071353 	         cellular response to interleukin-4	31	3	0.11	123	0.00020	0.00020	0.00020
+92	317	GO:0071346 	      cellular response to interferon-gamma	174	8	0.64	28	2.5e-07	0.00021	0.00021
+93	317	GO:0019886 	antigen processing and presentation of e...	98	4	0.36	164	0.00048	0.00048	0.00048
+94	317	GO:0061299 	retina vasculature morphogenesis in came...	9	2	0.03	166	0.00048	0.00048	0.00048
+95	317	GO:0097011 	cellular response to granulocyte macroph...	9	2	0.03	167	0.00048	0.00048	0.00048
+96	317	GO:0045086 	positive regulation of interleukin-2 bio...	12	2	0.04	193	0.00087	0.00087	0.00087
+97	317	GO:0071222 	    cellular response to lipopolysaccharide	171	5	0.63	153	0.00043	0.00043	0.00089
+98	317	GO:0030593 	                      neutrophil chemotaxis	89	6	0.33	37	9.3e-07	0.00119	0.00092
+99	319	GO:0071356 	cellular response to tumor necrosis fact...	289	9	0.84	50	1.4e-07	1.4e-07	3.5e-08
+100	319	GO:0070098 	       chemokine-mediated signaling pathway	82	7	0.24	23	3.8e-09	3.8e-09	6.5e-08
+101	319	GO:0051607 	                  defense response to virus	252	9	0.74	42	4.2e-08	2.2e-06	2.5e-07
+102	319	GO:0071222 	    cellular response to lipopolysaccharide	171	8	0.50	38	3.2e-08	3.2e-08	9.0e-07
+103	319	GO:0071347 	         cellular response to interleukin-1	174	9	0.51	18	1.7e-09	1.6e-06	1.6e-06
+104	319	GO:0006954 	                      inflammatory response	763	16	2.23	16	2.7e-10	1.6e-05	4.1e-06
+105	319	GO:0043331 	                          response to dsRNA	97	4	0.28	249	0.00018	0.00018	7.8e-06
+106	319	GO:0045071 	negative regulation of viral genome repl...	53	5	0.15	69	4.5e-07	4.5e-07	1.1e-05
+107	319	GO:0030593 	                      neutrophil chemotaxis	89	5	0.26	133	6.0e-06	6.0e-06	1.7e-05
+108	319	GO:0090026 	positive regulation of monocyte chemotax...	18	3	0.05	159	1.9e-05	1.9e-05	1.9e-05
+109	319	GO:0002407 	                  dendritic cell chemotaxis	23	3	0.07	189	4.0e-05	4.0e-05	4.0e-05
+110	319	GO:0010574 	regulation of vascular endothelial growt...	32	4	0.09	105	2.2e-06	7.7e-05	7.7e-05
+111	319	GO:0060337 	        type I interferon signaling pathway	87	4	0.25	226	0.00012	0.00012	0.00012
+112	319	GO:0031622 	    positive regulation of fever generation	7	2	0.02	246	0.00017	0.00017	0.00017
+113	319	GO:0002548 	                        monocyte chemotaxis	63	6	0.18	37	2.7e-08	0.00026	0.00018
+114	319	GO:0010469 	            regulation of receptor activity	572	8	1.67	262	0.00023	0.00023	0.00023
+115	319	GO:0035457 	      cellular response to interferon-alpha	10	2	0.03	293	0.00037	0.00037	0.00037
+116	319	GO:0048661 	positive regulation of smooth muscle cel...	76	4	0.22	210	7.1e-05	7.1e-05	0.00037
+117	319	GO:0010820 	   positive regulation of T cell chemotaxis	11	2	0.03	311	0.00045	0.00045	0.00045
+118	319	GO:0045086 	positive regulation of interleukin-2 bio...	12	2	0.04	327	0.00054	0.00054	0.00054
+119	319	GO:0032496 	             response to lipopolysaccharide	323	12	0.94	10	1.1e-10	0.00055	0.00055
+120	319	GO:0070374 	positive regulation of ERK1 and ERK2 cas...	231	5	0.67	334	0.00055	0.00055	0.00055
+121	319	GO:0009615 	                          response to virus	336	12	0.98	14	1.7e-10	0.00113	0.00056
+122	319	GO:2000406 	    positive regulation of T cell migration	26	4	0.08	87	9.2e-07	0.00069	0.00059
+123	319	GO:1900025 	negative regulation of substrate adhesio...	13	2	0.04	338	0.00064	0.00064	0.00064
+124	319	GO:0032729 	positive regulation of interferon-gamma ...	61	3	0.18	352	0.00075	0.00075	0.00075
+125	319	GO:0000187 	                activation of MAPK activity	148	4	0.43	365	0.00091	0.00091	0.00091
+126	337	GO:0060337 	        type I interferon signaling pathway	87	6	0.08	1	8.7e-11	8.7e-11	8.7e-11
+127	337	GO:0045071 	negative regulation of viral genome repl...	53	4	0.05	8	1.2e-07	1.2e-07	1.2e-07
+128	337	GO:0051607 	                  defense response to virus	252	6	0.23	7	5.3e-08	1.3e-06	1.3e-07
+129	337	GO:0035457 	      cellular response to interferon-alpha	10	2	0.01	26	3.4e-05	3.4e-05	3.4e-05
+130	337	GO:0048685 	negative regulation of collateral sprout...	1	1	0.00	37	9e-04	0.00090	0.00090
+131	337	GO:0009615 	                          response to virus	336	8	0.30	4	1.7e-10	0.00099	0.00099
+132	34	GO:0006686 	         sphingomyelin biosynthetic process	6	2	0.02	2	0.00018	0.00018	0.00018
+133	34	GO:0051974 	negative regulation of telomerase activi...	10	2	0.04	4	0.00054	0.00054	0.00054
+134	343	GO:0032922 	    circadian regulation of gene expression	55	3	0.17	3	0.00069	0.00069	0.00069
+135	343	GO:1900029 	     positive regulation of ruffle assembly	14	2	0.04	6	0.00086	0.00086	0.00086
+136	343	GO:2000060 	positive regulation of protein ubiquitin...	15	2	0.05	7	0.00099	0.00099	0.00099
+137	347	GO:0032876 	negative regulation of DNA endoreduplica...	5	2	0.02	4	1e-04	1e-04	1e-04
+138	347	GO:0051902 	negative regulation of mitochondrial dep...	7	2	0.02	6	0.00021	0.00021	0.00021
+139	347	GO:1900119 	positive regulation of execution phase o...	12	2	0.04	22	0.00065	0.00065	0.00065
+140	353	GO:0002906 	negative regulation of mature B cell apo...	4	2	0.01	61	7.3e-05	7.3e-05	7.3e-05
+141	353	GO:0044597 	             daunorubicin metabolic process	8	2	0.03	99	0.00034	0.00034	0.00034
+142	353	GO:0044598 	              doxorubicin metabolic process	8	2	0.03	100	0.00034	0.00034	0.00034
+143	353	GO:0030890 	positive regulation of B cell proliferat...	41	3	0.14	111	0.00041	0.00041	0.00041
+144	353	GO:0032308 	positive regulation of prostaglandin sec...	10	3	0.04	18	5.0e-06	0.00042	0.00042
+145	353	GO:0001516 	         prostaglandin biosynthetic process	24	3	0.08	66	8.1e-05	8.1e-05	0.00091
+146	353	GO:1902166 	negative regulation of intrinsic apoptot...	13	2	0.05	163	0.00093	0.00093	0.00093
+147	375	GO:0030511 	positive regulation of transforming grow...	26	3	0.10	10	0.00014	0.00014	0.00014
+148	375	GO:1903243 	negative regulation of cardiac muscle hy...	6	2	0.02	13	0.00023	0.00023	0.00023
+149	375	GO:0071493 	                  cellular response to UV-B	8	2	0.03	23	0.00042	0.00042	0.00042
+150	375	GO:2000643 	positive regulation of early endosome to...	8	2	0.03	24	0.00042	0.00042	0.00042
+151	375	GO:0034115 	negative regulation of heterotypic cell-...	9	2	0.04	34	0.00054	0.00054	0.00054
+152	375	GO:0003376 	sphingosine-1-phosphate signaling pathwa...	12	2	0.05	52	0.00098	0.00098	0.00098
+153	392	GO:0050776 	              regulation of immune response	1089	11	2.50	28	2.4e-05	2.4e-05	1.0e-09
+154	392	GO:0032609 	                interferon-gamma production	100	4	0.23	44	8.0e-05	8.0e-05	1.3e-06
+155	392	GO:0019835 	                                  cytolysis	43	4	0.10	16	2.8e-06	2.8e-06	2.8e-06
+156	392	GO:0006955 	                            immune response	2219	24	5.10	1	3.1e-12	0.00013	6.0e-06
+157	392	GO:0033153 	        T cell receptor V(D)J recombination	5	2	0.01	34	5.1e-05	5.1e-05	5.1e-05
+158	392	GO:0008626 	granzyme-mediated apoptotic signaling pa...	6	2	0.01	42	7.7e-05	7.7e-05	7.7e-05
+159	392	GO:0001771 	            immunological synapse formation	14	3	0.03	18	4.0e-06	0.00038	0.00027
+160	392	GO:0003376 	sphingosine-1-phosphate signaling pathwa...	12	2	0.03	60	0.00034	0.00034	0.00034
+161	392	GO:0001829 	       trophectodermal cell differentiation	15	2	0.03	64	0.00053	0.00053	0.00053
+162	392	GO:0048535 	                     lymph node development	17	2	0.04	70	0.00069	0.00069	0.00069
+163	392	GO:0070233 	negative regulation of T cell apoptotic ...	19	2	0.04	74	0.00086	0.00086	0.00086
+164	392	GO:0007165 	                        signal transduction	6249	27	14.37	40	5.7e-05	0.24735	0.00097
+165	403	GO:0015671 	                           oxygen transport	14	2	0.01	38	9.7e-05	9.7e-05	9.7e-05
+166	403	GO:0070233 	negative regulation of T cell apoptotic ...	19	2	0.02	43	0.00018	0.00018	0.00018
+167	403	GO:0042744 	        hydrogen peroxide catabolic process	22	2	0.02	47	0.00025	0.00025	0.00025
+168	403	GO:0042542 	              response to hydrogen peroxide	124	3	0.13	49	0.00029	0.00029	0.00082
+169	403	GO:0015701 	                      bicarbonate transport	43	2	0.05	58	0.00095	0.00095	0.00095
+170	407	GO:0050852 	T cell receptor signaling pathway       201	5	0.52	31	0.00016	0.00016	0.00016	0.1006
+171	407	GO:0006955 	                  immune response      2219	24	5.73	1	8.5e-11	6.7e-05	0.00028	5.3e-07
+172	407	GO:0071481 	       cellular response to X-ray        13	2	0.03	50	0.00050	0.00050	0.00050	0.0224
+173	419	GO:0006954 	                      inflammatory response	763	21	3.25	1	4.4e-12	9.9e-09	7.3e-08
+174	419	GO:0043312 	                   neutrophil degranulation	484	10	2.06	83	3.8e-05	3.8e-05	3.8e-05
+175	419	GO:0007188 	adenylate cyclase-modulating G-protein c...	184	6	0.78	114	0.00013	0.00013	0.00021
+176	419	GO:1903003 	positive regulation of protein deubiquit...	7	2	0.03	148	0.00037	0.00037	0.00037
+177	419	GO:0032496 	             response to lipopolysaccharide	323	9	1.38	53	9.2e-06	0.00039	0.00038
+178	419	GO:0070374 	positive regulation of ERK1 and ERK2 cas...	231	6	0.98	155	0.00046	0.00046	0.00046
+179	419	GO:0048143 	                       astrocyte activation	9	2	0.04	172	0.00063	0.00063	0.00063
+180	419	GO:0033089 	positive regulation of T cell differenti...	11	2	0.05	192	0.00096	0.00096	0.00096
+181	419	GO:0070757 	interleukin-35-mediated signaling pathwa...	11	2	0.05	193	0.00096	0.00096	0.00096
+182	421	GO:0007223 	Wnt signaling pathway, calcium modulatin...	38	3	0.14	4	0.00037	0.00037	0.00037
+183	421	GO:0003334 	                   keratinocyte development	11	2	0.04	8	0.00073	0.00073	0.00073
+184	421	GO:0003376 	sphingosine-1-phosphate signaling pathwa...	12	2	0.04	9	0.00087	0.00087	0.00087
+185	439	GO:0051591 	                           response to cAMP	98	4	0.22	8	6.7e-05	6.7e-05	6.7e-05
+186	439	GO:0032870 	      cellular response to hormone stimulus	677	7	1.52	48	0.00069	0.00069	9.7e-05
+187	439	GO:0045647 	negative regulation of erythrocyte diffe...	8	2	0.02	15	0.00014	0.00014	0.00014
+188	439	GO:0043922 	negative regulation by host of viral tra...	12	2	0.03	34	0.00032	0.00032	0.00032
+189	439	GO:0071277 	           cellular response to calcium ion	73	3	0.16	45	0.00058	0.00058	0.00058
+190	439	GO:0035994 	                 response to muscle stretch	18	2	0.04	49	0.00073	0.00073	0.00073
+191	451	GO:0043456 	      regulation of pentose-phosphate shunt	5	2	0.02	6	0.00014	0.00014	0.00014
+192	451	GO:0001666 	                        response to hypoxia	342	7	1.30	19	0.00032	0.00032	0.00022
+193	451	GO:0043312 	                   neutrophil degranulation	484	8	1.85	23	0.00049	0.00049	0.00049
+194	451	GO:0045657 	positive regulation of monocyte differen...	9	2	0.03	24	0.00051	0.00051	0.00051
+195	477	GO:0002523 	leukocyte migration involved in inflamma...	11	3	0.05	8	1.1e-05	1.1e-05	1.1e-05
+196	477	GO:0070488 	                     neutrophil aggregation	2	2	0.01	13	1.7e-05	1.7e-05	1.7e-05
+197	477	GO:0043312 	                   neutrophil degranulation	484	10	1.98	19	2.7e-05	2.7e-05	2.7e-05
+198	477	GO:0010043 	                       response to zinc ion	56	4	0.23	36	8.1e-05	8.1e-05	8.1e-05
+199	477	GO:0051092 	positive regulation of NF-kappaB transcr...	142	5	0.58	66	0.00029	0.00029	0.00029
+200	477	GO:0090266 	regulation of mitotic cell cycle spindle...	14	3	0.06	16	2.3e-05	2.3e-05	0.00033
+201	477	GO:0050832 	                 defense response to fungus	35	3	0.14	77	0.00039	0.00039	0.00039
+202	477	GO:0050830 	defense response to Gram-positive bacter...	88	4	0.36	86	0.00047	0.00047	0.00047
+203	477	GO:0019730 	             antimicrobial humoral response	84	4	0.34	76	0.00039	0.00039	0.00065
+204	477	GO:0006954 	                      inflammatory response	763	13	3.12	9	1.2e-05	0.00042	0.00069
+205	489	GO:0043312 	                   neutrophil degranulation	484	12	0.76	2	2.9e-12	2.9e-12	2.9e-12
+206	489	GO:0002227 	           innate immune response in mucosa	19	5	0.03	16	7.5e-11	7.5e-11	7.5e-11
+207	489	GO:0050830 	defense response to Gram-positive bacter...	88	6	0.14	24	4.2e-09	4.2e-09	4.2e-09
+208	489	GO:0019731 	             antibacterial humoral response	42	5	0.07	25	5.4e-09	5.4e-09	2.1e-07
+209	489	GO:0050829 	defense response to Gram-negative bacter...	84	4	0.13	35	8.6e-06	8.6e-06	8.6e-06
+210	489	GO:0031640 	         killing of cells of other organism	59	5	0.09	26	3.1e-08	1.5e-06	1.3e-05
+211	489	GO:0051673 	      membrane disruption in other organism	9	3	0.01	28	2.9e-07	6.2e-05	4.6e-05
+212	489	GO:0019835 	                                  cytolysis	43	3	0.07	39	4.1e-05	0.00166	0.00041
+213	489	GO:0050832 	                 defense response to fungus	35	3	0.05	37	2.2e-05	0.00094	0.00094
+214	52	GO:0006406 	                   mRNA export from nucleus	108	5	0.26	1	6.0e-06	6.0e-06	5.4e-05
+215	52	GO:0060440 	                          trachea formation	6	2	0.01	26	8.5e-05	8.5e-05	8.5e-05
+216	52	GO:0045747 	positive regulation of Notch signaling p...	46	3	0.11	40	0.00018	0.00018	0.00018
+217	52	GO:0035723 	interleukin-15-mediated signaling pathwa...	13	2	0.03	64	0.00044	0.00044	0.00044
+218	52	GO:0042531 	positive regulation of tyrosine phosphor...	63	3	0.15	67	0.00047	0.00047	0.00047
+219	61	GO:0042542 	              response to hydrogen peroxide	124	5	0.46	96	9.6e-05	9.6e-05	1.7e-05
+220	61	GO:0090026 	positive regulation of monocyte chemotax...	18	3	0.07	73	3.8e-05	3.8e-05	3.8e-05
+221	61	GO:0016525 	        negative regulation of angiogenesis	96	5	0.36	64	2.8e-05	2.8e-05	0.00014
+222	61	GO:0070098 	       chemokine-mediated signaling pathway	82	4	0.30	119	0.00024	0.00024	0.00024
+223	61	GO:0048246 	                      macrophage chemotaxis	34	3	0.13	124	0.00027	0.00027	0.00027
+224	61	GO:0043312 	                   neutrophil degranulation	484	8	1.79	145	0.00040	0.00040	0.00040
+225	61	GO:0050729 	positive regulation of inflammatory resp...	119	6	0.44	42	5.1e-06	5.1e-06	0.00046
+226	61	GO:0042535 	positive regulation of tumor necrosis fa...	11	2	0.04	165	0.00073	0.00073	0.00073
+227	91	GO:0030449 	        regulation of complement activation	111	6	0.44	19	4.8e-06	6.4e-05	5.1e-05
+228	91	GO:0006958 	   complement activation, classical pathway	151	5	0.59	58	0.00032	0.00032	0.00032
+229	91	GO:0035456 	                response to interferon-beta	23	3	0.09	37	9.7e-05	9.7e-05	0.00041
+230	91	GO:0010873 	positive regulation of cholesterol ester...	9	2	0.04	69	0.00054	0.00054	0.00054
+231	91	GO:0034382 	              chylomicron remnant clearance	9	2	0.04	70	0.00054	0.00054	0.00054
+232	91	GO:0045779 	     negative regulation of bone resorption	12	2	0.05	92	0.00098	0.00098	0.00098
+233	93	GO:0071280 	            cellular response to copper ion	26	8	0.09	1	2.0e-14	2.0e-14	2.0e-14
+234	93	GO:0010273 	               detoxification of copper ion	16	7	0.06	2	4.8e-14	4.8e-14	4.8e-14
+235	93	GO:0071294 	              cellular response to zinc ion	23	7	0.08	6	1.0e-12	1.0e-12	1.0e-12
+236	93	GO:0061621 	                       canonical glycolysis	25	7	0.09	9	2.0e-12	2.0e-12	2.0e-12
+237	93	GO:0045926 	              negative regulation of growth	234	8	0.81	83	1.4e-06	1.4e-06	2.1e-11
+238	93	GO:0071276 	           cellular response to cadmium ion	38	7	0.13	26	5.0e-11	5.0e-11	5.0e-11
+239	93	GO:0006882 	              cellular zinc ion homeostasis	39	7	0.14	27	6.1e-11	6.1e-11	6.1e-11
+240	93	GO:0006094 	                            gluconeogenesis	80	6	0.28	70	3.4e-07	3.4e-07	3.4e-07
+241	93	GO:0051607 	                  defense response to virus	252	8	0.88	88	2.5e-06	2.5e-06	1.0e-06
+242	93	GO:0050794 	             regulation of cellular process	11176	44	38.87	890	0.11031	0.71698	9.7e-06
+243	93	GO:0060337 	        type I interferon signaling pathway	87	5	0.30	92	1.3e-05	1.3e-05	1.3e-05
+244	93	GO:0045071 	negative regulation of viral genome repl...	53	4	0.18	108	3.4e-05	3.4e-05	3.4e-05
+245	93	GO:0035694 	    mitochondrial protein catabolic process	5	2	0.02	119	0.00012	0.00012	0.00012
+246	93	GO:0097345 	mitochondrial outer membrane permeabiliz...	55	3	0.19	167	0.00092	0.00092	0.00024
+247	93	GO:0036018 	        cellular response to erythropoietin	7	2	0.02	131	0.00025	0.00025	0.00025
+248	93	GO:0043312 	                   neutrophil degranulation	484	8	1.68	134	0.00026	0.00026	0.00026
+249	93	GO:0010917 	negative regulation of mitochondrial mem...	8	2	0.03	145	0.00033	0.00033	0.00033
+250	93	GO:0030388 	fructose 1,6-bisphosphate metabolic proc...	8	2	0.03	146	0.00033	0.00033	0.00033
+251	93	GO:0006096 	                         glycolytic process	101	10	0.35	8	1.8e-12	0.00167	0.00049

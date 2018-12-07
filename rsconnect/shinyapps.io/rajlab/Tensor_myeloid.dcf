@@ -1,0 +1,12 @@
+name: Tensor_myeloid
+title:
+username:
+account: rajlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 605695
+bundleId: 1746839
+url: https://rajlab.shinyapps.io/Tensor_myeloid/
+when: 1544137370.21035
+asMultiple: FALSE
+asStatic: FALSE
