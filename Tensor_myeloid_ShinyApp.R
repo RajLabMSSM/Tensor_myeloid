@@ -15,13 +15,17 @@ abstract <- "<br>Recent human genetic studies suggest that cells of the innate i
 authors <- HTML("<h4>Authors</h4>Satesh Ramdhani, Elisa Navarro, Evan Udine, Madison Parks, and Towfique Raj* <br>
 <h4>Affiliations</h4>Ronald M. Loeb Center for Alzheimers Disease,<br>Department of Neuroscience and Friedman Brain Institute,<br>Department of Genetics and Genomic Sciences,<br>Icahn School of Medicine at Mount Sinai, New York, New York, USA.<br>
 <h4>*Corresponding author</h4> towfique.raj@mssm.edu (T.R.)")
-fig1Path <- normalizePath(file.path('./figures', 'fig1.pdf'))
-#mainFig <- tags$iframe(style="height:400px; width:100%", src=fig1Path)
-#mainFig <- img(src="figures/fig1.png")
+fig1Path <- tags$iframe(src="figures/fig1.pdf",
+                        height="600px", width="100%", scrolling="no", seamless=NA) 
 
 ui <- fluidPage( 
+  theme = "css/main.css",
   titlePanel("Tensor Myeloid Supplemental Material"),
-  em(paperTitle),br(),br(),br(),
+  em(paperTitle),br(),br(),
+  a(href="http://labs.neuroscience.mssm.edu/project/raj-lab/", target="_blank", img(id="sinai",src="logos/sinai.png")),
+  a(id="github", href="https://github.com/RajLabMSSM/Tensor_myeloid", target="_blank", img(src="logos/github.png"), "GithHub Repository"),
+  br(),br(),br(),
+ 
   
   sidebarLayout(
     sidebarPanel(
@@ -40,8 +44,9 @@ ui <- fluidPage(
                          HTML("<h3>Table 5</h3><br>Trans-eQTLs detected in Cardiogenics data (CG) at FDR < 0.15. <br><em>Note: </em>The trans-eSNPs are not LD-pruned.")
         ),
         conditionalPanel("input.tabs == 'Table 6'",
-                         HTML("<h3>Table 6</h3><br>Trans-eSNPs detected in FF dataset at FDR < 0.15 that colocalize with disease or trait-associated GWAS SNPs. The table lists the component number, tissue scores, gene name and scores, and cis-gene (if any).")
-                         #uiOutput("FFplot")
+                         HTML("<h3>Table 6</h3><br>Trans-eSNPs detected in FF dataset at FDR < 0.15 that colocalize with disease or trait-associated GWAS SNPs. The table lists the component number, tissue scores, gene name and scores, and cis-gene (if any)."),
+                         helpText(br(),em("Click a Component in the first column of the table to display the genes within that component.")),
+                         uiOutput("FFplot")
                          
         ),
         conditionalPanel("input.tabs == 'Table 7'",
@@ -56,7 +61,7 @@ ui <- fluidPage(
     mainPanel(
       tabsetPanel(
         id = 'tabs',
-        tabPanel("Abstract",HTML(abstract), br() ),
+        tabPanel("Abstract",HTML(abstract), br(),br(), fig1Path),
         
         tabPanel("Table 2", DT::dataTableOutput("t2")),
         tabPanel("Table 3", DT::dataTableOutput("t3")),
@@ -72,8 +77,10 @@ ui <- fluidPage(
   )
 )
 
-server <- function(input, output) {
-  opts <- list( scrollY = 500, sScrollX="100%", bScrollCollapse=TRUE,  autoWidth=TRUE, pageLength=50)
+server <- function(input, output, session) {  
+  
+  opts <- list( scrollY = 500, sScrollX="100%", bScrollCollapse=TRUE,  autoWidth=TRUE, pageLength=50,
+                dom = 'frtipB', buttons = c('csv', 'excel', 'pdf', 'print', 'copy'), paging=FALSE)
   
   addTable <- function(tabNum){
     print(paste("Creating Table",toString(tabNum)))
@@ -83,15 +90,17 @@ server <- function(input, output) {
       colnames(file) <- c("Component","SNP","P-value", "Disease", "FDR")
       ## FF component plots
       if(tabNum==6){
-        
+       # reactive_t6 <- react <- reactive({unique(file)})   
       }
       ## FF component plots
       
-    } 
+    }
+    #else{react <- unique(file)}
     file <- unique(file)
+    
     table <- DT::renderDT({
       DT::datatable(file, options=opts, filter='top', rownames=F, 
-                    class='cell-border stripe', selection='single')
+                    class='cell-border stripe', selection='single', extensions=c('Buttons','Scroller'))
     })
      
     return(table)
@@ -100,33 +109,34 @@ server <- function(input, output) {
   output$t2 <- addTable(2)
   output$t3 <- addTable(3)
   output$t4 <- addTable(4)
-  output$t5 <- addTable(5)
+  output$t5 <- addTable(5) 
   output$t6 <- addTable(6)
   output$t7 <- addTable(7) 
   output$t24 <- addTable(24) 
   output$t29 <- addTable(29) 
   output$tXX <- addTable("XX") 
-  
-    
-  # output$FFplot = renderImage({
-  #   s = input$t6_rows_selected 
-  #   if (length(s)) {
-  #     filename <- normalizePath(file.path('./figures',
-  #                             paste('fig1.png', sep='')))
-  #     # Return a list containing the filename and alt text
-  #     list(src = filename,
-  #          alt = paste("Image number", "_test"))
-  #   }
-  # }, deleteFile=F)
-  # 
  
-      
-      filename <- normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf'))
-      output$FFplot <- renderUI({
-        tags$iframe(style="width:100%", src=filename)
-      })
+  ## Old
+  #Load Component Genes plots 
+  output$FFplot <- renderUI({
+    rowNum = input$t6_rows_selected
+    info = input$t6_cell_clicked
+   
+    if(length(info) & length(rowNum)){
+      component <-  info$value
+      colNum <- info[2]
+      if(colNum==0){ 
+        pdfPath <- paste("CG_Components/cardio_Component_",toString(component),".pdf",sep="")#normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf'))
+       
+        helpText(br(), paste("Genes within Component #: ", toString(component)),
+                 br(),# "Row,Col=",info[1],colNum,  
+                 tags$iframe(src=pdfPath, height="300px", width="100%", scrolling="no", seamless=NA))
+      }
+    }
+  })# end renderUI
 
- 
+
+
   
   }
 

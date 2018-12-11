@@ -1,0 +1,26 @@
+iframe {
+    background: transparent;
+}
+#github img {
+    height: 70px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#github:hover {
+    color: magenta; 
+}
+#github img:hover, #sinai:hover{ 
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+}
+
+#sinai {
+    height: 90px;
+    margin-right: 50px;
+    margin-left: 10px;
+    border-radius: 15px;
+    padding: 10px;
+}
+ 
