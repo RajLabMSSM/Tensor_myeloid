@@ -7,14 +7,18 @@ iframe {
     padding: 10px;
 }
 
-#github:hover {
+#github img:hover, #github:hover {
     color: magenta; 
 }
-#github img:hover, #sinai:hover{ 
+#github:hover img, #sinai:hover { 
+    -webkit-transition: .25 ease-in-out;
+    transition: .5s ease-in-out;
+
     -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
 }
+ 
 
 #sinai {
     height: 90px;

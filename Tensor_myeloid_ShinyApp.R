@@ -3,7 +3,9 @@
 try({ 
   library(shiny) 
   library(DT)
-  library(stringr) 
+  library(stringr)
+  library(dplyr)
+  library(tidyr)
   setwd("~/Desktop/Tensor_myeloid")
 })
  
@@ -13,16 +15,15 @@ try({
 
 paperTitle <- "'Tensor Decomposition for Induced Monocyte and Macrophage Gene Expression Identifies Neurodegenerative Disease-specific Trans-eQTLs'"
 abstract <- "<br>Recent human genetic studies suggest that cells of the innate immune system have a primary role in the pathogenesis of neurodegenerative diseases. However, the results from these studies often do not elucidate how the genetic variants affect the biology of these cells to modulate disease risk. Here, we applied a tensor decomposition method to uncover disease-associated gene networks linked to distal genetic variation in stimulated human monocytes and macrophages gene expression profiles. We report robust evidence that some disease-associated genetic variants affect the expression of multiple genes in trans. These include a Parkinson’s disease locus influencing the expression of genes mediated by a protease that controls lysosomal function, and Alzheimer’s disease loci influencing the expression of genes involved in type 1 interferon signaling, myeloid phagocytosis, and complement cascade pathways. Overall, we uncover gene networks in induced innate immune cells linked to disease-associated genetic variants, which may help elucidate the underlying biology of disease." 
-authors <- HTML("<h4>Authors</h4>Satesh Ramdhani, Elisa Navarro, Evan Udine, Madison Parks, Brian M. Schilder, and Towfique Raj* <br>
+authors <- HTML("<h4>Authors</h4>Satesh Ramdhani, Elisa Navarro, Evan Udine, Brian M. Schilder, Madison Parks, and Towfique Raj* <br>
 <h4>Affiliations</h4>Ronald M. Loeb Center for Alzheimers Disease,<br>Department of Neuroscience and Friedman Brain Institute,<br>Department of Genetics and Genomic Sciences,<br>Icahn School of Medicine at Mount Sinai, New York, New York, USA.<br>
-<h4>*Corresponding author</h4> towfique.raj@mssm.edu (T.R.)")
-#fig1Path <- tags$iframe(src="figures/fig1.pdf", height="600px", width="100%", scrolling="no", seamless=NA) 
+<h4>*Corresponding author</h4> towfique.raj@mssm.edu (T.R.)") 
 fig1Path <- tags$img(src="figures/fig1.png",height="400px")
 
 ui <- fluidPage( 
   theme = "css/main.css",
   titlePanel("Tensor Myeloid Supplemental Material"),
-  em(paperTitle),br(),br(),
+  h4(em(paperTitle)), br(),
   a(href="http://labs.neuroscience.mssm.edu/project/raj-lab/", target="_blank", img(id="sinai",src="logos/sinai.png")),
   a(id="github", href="https://github.com/RajLabMSSM/Tensor_myeloid", target="_blank", img(src="logos/github.png"), "GithHub Repository"),
   br(),br(),br(),
@@ -31,6 +32,14 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
         conditionalPanel("input.tabs == 'Abstract'", authors
+        ),
+        conditionalPanel("input.tabs == 'Table 0'",
+                         HTML("<h3>Table 0</h3><br>Activity Scores for each component in the FF data."),
+                         uiOutput("FFplot_t0") 
+        ),
+        conditionalPanel("input.tabs == 'Table 1'",
+                         HTML("<h3>Table 1</h3><br>Tissue Scores for each component in the CG data."),
+                         uiOutput("CGplot_t1") 
         ),
         conditionalPanel("input.tabs == 'Table 2'",
                          HTML("<h3>Table 2</h3><br>Gene Ontology (GO) categories enrichment for the sparse components in FF and CG using R package topGo.")
@@ -47,12 +56,18 @@ ui <- fluidPage(
         conditionalPanel("input.tabs == 'Table 6'",
                          HTML("<h3>Table 6</h3><br>Trans-eSNPs detected in FF dataset at FDR < 0.15 that colocalize with disease or trait-associated GWAS SNPs. The table lists the component number, tissue scores, gene name and scores, and cis-gene (if any)."),
                          helpText(br(),em("Click any cell in the first column of the table to display the genes within that Component.")),
-                         uiOutput("FFplot") 
+                         uiOutput("FFplot_t6") 
         ),
         conditionalPanel("input.tabs == 'Table 7'",
                          HTML("<h3>Table 7</h3><br>Trans-eSNPs detected in CG dataset at FDR < 0.15 that colocalize with disease or trait-associated GWAS SNPs. The table lists the component number, tissue scores, gene name and scores, and cis-gene (if any)."),
                          helpText(br(),em("Click any cell in the first column of the table to display the genes within that Component.")),
-                         uiOutput("CGplot")
+                         uiOutput("CGplot_t7")
+        ),
+        conditionalPanel("input.tabs == 'Table 8'",
+                         HTML("<h3>Table 8</h3><br>")
+        ),
+        conditionalPanel("input.tabs == 'Table 9'",
+                         HTML("<h3>Table 9</h3><br>")
         ),
         conditionalPanel("input.tabs == 'Table XX'",
                          HTML("<h3>Table XX</h3><br>SNP-based heritability enrichment for each component. Proportion of heritability for 18 selected complex traits that can be attributed to each sparse component from the FF data.")
@@ -64,20 +79,31 @@ ui <- fluidPage(
       tabsetPanel(
         id = 'tabs',
         tabPanel("Abstract",HTML(abstract), br(),br(), fig1Path),
-        
+        tabPanel("Table 0", DT::dataTableOutput("t0"),
+                  br(), h2(uiOutput("geneTableHeader0")),
+                  DT::dataTableOutput("geneTable0"), br(), br()
+                ),
+        tabPanel("Table 1", DT::dataTableOutput("t1"),
+                 br(), h2(uiOutput("geneTableHeader1")),
+                 DT::dataTableOutput("geneTable1"), br(), br() 
+                 ),
         tabPanel("Table 2", DT::dataTableOutput("t2")),
         tabPanel("Table 3", DT::dataTableOutput("t3")),
         tabPanel("Table 4", DT::dataTableOutput("t4")),
         tabPanel("Table 5", DT::dataTableOutput("t5")),
-        tabPanel("Table 6", DT::dataTableOutput("t6")),
-        tabPanel("Table 7", DT::dataTableOutput("t7")),
+        tabPanel("Table 6", DT::dataTableOutput("t6"), 
+                  br(), h2(uiOutput("geneTableHeader6")),
+                  DT::dataTableOutput("geneTable6"), br(), br()
+                ),
+        tabPanel("Table 7", DT::dataTableOutput("t7"), 
+                 br(), h2(uiOutput("geneTableHeader7")),
+                 DT::dataTableOutput("geneTable7"), br(), br()
+                ),
         tabPanel("Table 8", DT::dataTableOutput("t24")),
         tabPanel("Table 9", DT::dataTableOutput("t29")),
         tabPanel("Table XX", DT::dataTableOutput("tXX"))
-      ),
-      conditionalPanel("input.tabs == 'Table 6' || input.tabs == 'Table 7' ",
-                       br(), h2(uiOutput("entryID")),
-                       DT::dataTableOutput("geneTable"), br(), br())
+      )
+      
     )
   )
 )
@@ -88,36 +114,103 @@ server <- function(input, output, session) {
   opts <- list( scrollY = 500, sScrollX="100%", bScrollCollapse=TRUE, pageLength=50,
                 dom = 'frtipB', buttons = c('csv', 'excel', 'pdf', 'print', 'copy'), paging=FALSE)
   
+  
   # Save named list of genes/scores
   get_compDict <- function(tabNum){
     file <- read.delim(paste("supp_tables/SUPPLEMENTARY_TABLE_",toString(tabNum),".txt", sep=""), fill=NA, header=T, stringsAsFactors=F)
-    
-    geneTables <-  file[c("COMP","CompGenes_CompScores")]
-    geneTables$entryID <- paste(geneTables$COMP,c(1:dim(geneTables)[1]), sep=".")
+    # One gene set per component
+    geneTables <- file %>% dplyr::group_by(COMP) %>% top_n(n=1, wt=COMP) %>%
+      data.frame() %>% select(c("COMP","CompGenes_CompScores")) %>% unique()  
     geneTables["CompGenes_CompScores"] <-gsub("([\\])","@", geneTables$CompGenes_CompScores)  
-    compDict <- setNames(object = geneTables$CompGenes_CompScores, nm = geneTables$entryID)
+    compDict <- setNames(object = geneTables$CompGenes_CompScores, nm = as.character(geneTables$COMP))
     return(compDict)
   }
   compDict_t6 <- get_compDict(6)
   compDict_t7 <- get_compDict(7) 
+  
+  
+  # Save specific Component gene sets 
+  calc_scaledZscores <- function(scores){ 
+    scores_sd <- sd(scores)*sqrt((length(scores)-1)/(length(scores)))
+    scores_mean <- mean(scores) 
+    zscores <- (scores - scores_mean) / scores_sd
+    scaled_zscores <- rescale(zscores, to=c(0,1))
+    return(scaled_zscores)
+  } 
+  
+  zscoreCSV <- function(filePath){ 
+    library(scales)
+    comp <- read.csv(filePath) 
+    scores <- comp$GeneScore 
+    scaled_zscores <-calc_scaledZscores(scores)
+    newDF <- data.frame(GeneSymbol = comp$GeneSymbol, Z_score = scaled_zscores)
+    
+    fileName <- gsub(filePath, pattern = ".csv", replacement = "")
+    write.csv(newDF, paste(fileName, "_Zscores.csv"), quote = F, row.names = F) 
+  } 
+  # zscoreCSV("geneTables/FF_component22.csv")
+  # zscoreCSV(filePath="geneTables/FF_component26.csv")
+  # zscoreCSV(filePath="geneTables/CG_component46.csv")
+  
+  
+  
+  
+  
+  
+   createTable <- function(file, opts){
+    table <- DT::renderDT({
+      DT::datatable(file, options=opts, filter='top', rownames=F, 
+                    class='cell-border stripe', selection='single', extensions=c('Buttons','Scroller'))
+    })
+    return(table)
+  }
   
   # Create table
   addTable <- function(tabNum){
     # Import file
     print(paste("Creating Table",toString(tabNum)))
     file <- read.delim(paste("supp_tables/SUPPLEMENTARY_TABLE_",toString(tabNum),".txt", sep=""), fill=NA, header=T, stringsAsFactors=F)
-    file$entryID <- paste(file$COMP,c(1:dim(file)[1]), sep=".")
+    #file$entryID <- paste(file$COMP,c(1:dim(file)[1]), sep=".")
     # Tables 6/7 Processing
     if(tabNum %in% c(6,7)){ 
-      file <- subset(file, select=c("entryID","COMP","SNP","PVAL","Disease", "FDR"))
-      colnames(file) <- c("entryID","Component","SNP","P-value", "Disease", "FDR") 
+      # Get the entries with the smallest P-vals per component / disease
+      file <- tmpTable <- file %>% dplyr::group_by(SNP, Disease) %>% top_n(n = -1, wt=PVAL) %>%
+        data.frame()  
+      file <- file %>% select(c("COMP","SNP","PVAL","Disease","FDR","CisGene")) 
+      colnames(file) <- c("Component","SNP","P-value","Disease","FDR","CisGene")
+      file$Component <- as.character(file$Component)  
+      # Create ActivityScore and TissueScore tables
+      conditionsTable <- tmpTable %>% select(c("COMP", "TissScores")) 
+      
+      ## ActivityScore
+      if(tabNum == 6){
+        activities <- c("LPS24","LPS2","IFN","Naive") 
+        file <- separate(data = file, col = CisGene,
+                         into=paste("CisGene",activities,sep="_"),sep = "_") 
+        # conditionsTable <- separate(data = conditionsTable, col = CisGene,
+        #                             into=paste("CisGene",activities,sep="_"),sep = "_")
+        conditionsTable <- separate(data = conditionsTable, col = TissScores,
+                                    into=paste("ActivityScore",activities,sep="_"),sep = "_") 
+        colnames(conditionsTable)[colnames(conditionsTable)=="COMP"] <- "Component"
+        conditionsTable <- conditionsTable %>% mutate(Component = as.character(Component))
+        output$t0 <- createTable(unique(conditionsTable), opts)
+      }
+      if(tabNum == 7){
+        tissues <- c("Macrophages","Monocytes")
+        file <- separate(data = file, col = CisGene,
+                         into=paste("CisGene",tissues,sep="_"),sep = "_") 
+        # conditionsTable <- separate(data = conditionsTable, col = CisGene, 
+        #                             into=paste("CisGene",tissues,sep="_"),sep = "_")
+        conditionsTable <- separate(data = conditionsTable, col = TissScores, 
+                                    into=paste("TissueScore",tissues,sep="_"),sep = "_")
+        colnames(conditionsTable)[colnames(conditionsTable)=="COMP"] <- "Component"
+        conditionsTable <- conditionsTable %>% mutate(Component = as.character(Component))
+        output$t1 <- createTable(unique(conditionsTable), opts)
+      }
+      
     }
     # Create dataTable
-    file <- unique(file) 
-    table <- DT::renderDT({
-      DT::datatable(file, options=opts, filter='top', rownames=F, 
-                    class='cell-border stripe', selection='single', extensions=c('Buttons','Scroller'))
-    }) 
+    table <- createTable(file, opts) 
     return(table)
   }
   
@@ -134,32 +227,83 @@ server <- function(input, output, session) {
   
   ######## Component Gene Details ######## 
   
-  # FF Gene Plots
-  output$FFplot <- renderUI({
+  # Table 0: FF Gene Plots
+  output$FFplot_t0 <- renderUI({
+    #rowNum = input$t6_rows_selected
+    info = input$t0_cell_clicked 
+    if(length(info)){
+      # Parse info
+      component <- info$value 
+      colNum <- info[2]
+      output$geneTableHeader0 <- renderUI(paste("Genes in FF Component ",component))
+      
+      if(colNum==0){  
+        # FF gene table 
+        geneList <- compDict_t6[toString(component)]
+        geneTable <- str_split_fixed(str_split_fixed(geneList, "@", Inf), "_", Inf)
+        geneTable <- data.frame(GeneSymbol=geneTable[,1], GeneScore=as.numeric(geneTable[,2]), stringsAsFactors=F)
+        
+        output$geneTable0 <- createTable(geneTable, opts) 
+        # Gene plot
+        pdfPath <- paste("FF_Components/FF_Component_",toString(component),".pdf",sep="")#normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf'))
+        helpText(br(), paste("Genes in FF Component ", toString(component)),
+                 br(), 
+                 tags$iframe(src=pdfPath, height="300px", width="100%", scrolling="no", seamless=NA)) 
+      }
+    }
+  }) 
+  
+  
+  # Table 1: FF Gene Plots
+  output$CGplot_t1 <- renderUI({
+    #rowNum = input$t7_rows_selected
+    info = input$t1_cell_clicked 
+    if(length(info)){
+      # Parse info 
+      component <- info$value
+      colNum <- info[2]
+      output$geneTableHeader1 <- renderUI(paste("Genes in CG Component ",component))
+      
+      if(colNum==0){  
+        # FF gene table 
+        geneList <- compDict_t7[toString(component)]
+        geneTable <-  str_split_fixed(str_split_fixed(geneList, "@", Inf), "_", Inf)
+        geneTable <- data.frame(GeneSymbol=geneTable[,1], GeneScore=as.numeric(geneTable[,2]), stringsAsFactors=F)
+        
+        output$geneTable1 <- createTable(geneTable, opts) 
+        # Gene plot
+        pdfPath <- paste("CG_Components/cardio_Component_",toString(component),".pdf",sep="")#normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf'))
+        helpText(br(), paste("Genes in CG Component ", toString(component)),
+                 br(),  
+                 tags$iframe(src=pdfPath, height="300px", width="100%", scrolling="no", seamless=NA))
+      }
+    }
+  }) 
+  
+  
+  
+  
+  # Table 6: FF Gene Plots
+  output$FFplot_t6 <- renderUI({
     #rowNum = input$t6_rows_selected
     info = input$t6_cell_clicked 
     if(length(info)){
       # Parse info
-      entryID <- info$value 
-      component <- strsplit( info$value,"[.]")[[1]][1]  
+      component <- info$value 
       colNum <- info[2]
-      output$entryID <- renderUI(paste("Genes in FF Component ",component,"( entryID ",entryID,")"))
+      output$geneTableHeader6 <- renderUI(paste("Genes in FF Component ",component))
       
-      if(colNum==0){ 
-        print(entryID)
+      if(colNum==0){  
         # FF gene table 
-        geneList <- compDict_t6[entryID]
-        geneTable <-  str_split_fixed(str_split_fixed(geneList, "@", Inf), "_", Inf)
+        geneList <- compDict_t6[toString(component)]
+        geneTable <- str_split_fixed(str_split_fixed(geneList, "@", Inf), "_", Inf)
         geneTable <- data.frame(GeneSymbol=geneTable[,1], GeneScore=as.numeric(geneTable[,2]), stringsAsFactors=F)
         
-        output$geneTable <- DT::renderDT({
-          DT::datatable(geneTable, options=opts, filter='top', rownames=F, class='cell-border stripe', selection='single', 
-                        extensions=c('Buttons','Scroller')) 
-        })
+        output$geneTable6 <- createTable(geneTable, opts) 
         # Gene plot
         pdfPath <- paste("FF_Components/FF_Component_",toString(component),".pdf",sep="")#normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf'))
         helpText(br(), paste("Genes in FF Component ", toString(component)),
-                 br(),# "Row,Col=",info[1],colNum,  
+                 br(), 
                  tags$iframe(src=pdfPath, height="300px", width="100%", scrolling="no", seamless=NA)) 
       }
     }
@@ -167,38 +311,38 @@ server <- function(input, output, session) {
   
   
   
-  # CG Gene Plots
-  output$CGplot <- renderUI({
+  
+  # Table 7: CG Gene Plots
+  output$CGplot_t7 <- renderUI({
     #rowNum = input$t7_rows_selected
     info = input$t7_cell_clicked 
     if(length(info)){
-      # Parse info
-      entryID <- info$value 
-      component <- strsplit( info$value,"[.]")[[1]][1]  
+      # Parse info 
+      component <- info$value
       colNum <- info[2]
-      output$entryID <- renderUI(paste("Genes in CG Component ",component,"( entryID ",entryID,")"))
+      output$geneTableHeader7 <- renderUI(paste("Genes in CG Component ",component))
       
-      if(colNum==0){ 
-        print(entryID)
+      if(colNum==0){  
         # FF gene table 
-        geneList <- compDict_t7[entryID]
+        geneList <- compDict_t7[toString(component)]
         geneTable <-  str_split_fixed(str_split_fixed(geneList, "@", Inf), "_", Inf)
         geneTable <- data.frame(GeneSymbol=geneTable[,1], GeneScore=as.numeric(geneTable[,2]), stringsAsFactors=F)
         
-        output$geneTable <- DT::renderDT({
-          DT::datatable(geneTable, options=opts, filter='top', rownames=F, class='cell-border stripe', selection='single', 
-                        extensions=c('Buttons','Scroller')) 
-        })
+        output$geneTable7 <- createTable(geneTable, opts) 
         # Gene plot
         pdfPath <- paste("CG_Components/cardio_Component_",toString(component),".pdf",sep="")#normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf'))
         helpText(br(), paste("Genes in CG Component ", toString(component)),
-                 br(),# "Row,Col=",info[1],colNum,  
+                 br(),  
                  tags$iframe(src=pdfPath, height="300px", width="100%", scrolling="no", seamless=NA))
       }
     }
   }) 
   
-  
+
+
+
+
+
 
 
 
@@ -247,31 +391,4 @@ shinyApp(ui, server)
 # }
 
 
-
-
-# 
-# genePlots <- function(CG_FF){ 
-#   urlSegment = switch(CG_FF,"CG"="CG_Components/cardio_Component_", "FF"="FF_Components/FF_Component_")
-#   
-#   renderUI({
-#     #rowNum = input$t6_rows_selected
-#     #info = input$t6_cell_clicked 
-#     info = switch(CG_FF,"CG"=input$t6_cell_clicked, "FF"=input$t7_cell_clicked) 
-#     if(length(info)){
-#       component <-  info$value
-#       colNum <- info[2]
-#       if(colNum==0){ 
-#         pdfPath <- paste(urlSegment, toString(component),".pdf",sep="")
-#         #normalizePath(file.path('./CG_Components', 'cardio_Component_1.pdf')) 
-#         return( helpText(br(), paste("Genes within ",CG_FF," Component ", toString(component)),
-#                          br(),# "Row,Col=",info[1],colNum,  
-#                          tags$iframe(src=pdfPath, height="300px", width="100%", scrolling="no", seamless=NA))
-#         )
-#       }
-#     }
-#   })# end renderUI
-#   
-# } # end genePlots
-# 
-# output$FFplot <- genePlots("FF")
-# output$CGplot <- genePlots("CG")
+ 
