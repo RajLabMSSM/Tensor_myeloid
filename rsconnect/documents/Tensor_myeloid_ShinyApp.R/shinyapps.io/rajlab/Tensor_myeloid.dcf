@@ -5,9 +5,9 @@ account: rajlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 605695
-bundleId: 1753858
+bundleId: 1757006
 url: https://rajlab.shinyapps.io/Tensor_myeloid/
-when: 1544479735.82553
+when: 1544578227.37672
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .Rapp.history

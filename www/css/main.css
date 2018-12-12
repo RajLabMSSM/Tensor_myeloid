@@ -23,4 +23,8 @@ iframe {
     border-radius: 15px;
     padding: 10px;
 }
+
+#geneTable6, #geneTable7 {
+    height: 200px;
+}
  
