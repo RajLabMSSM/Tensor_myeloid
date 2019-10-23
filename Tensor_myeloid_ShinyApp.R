@@ -61,13 +61,13 @@ ui <- fluidPage(
                          HTML("<h3>Table 4</h3><br>Enrichment of Gene Ontology (GO) categories among the genes in the sparse components.")
         ),
         conditionalPanel("input.tabs == 'Table 5'", # Originally t3
-                         HTML("<h3>Table 3</h3><br>Sparse components that are enriched for genes within disease-associated loci. The component number, P-value, and corresponding GWAS disease or traits are listed.")   
+                         HTML("<h3>Table 5</h3><br>Sparse components that are enriched for genes within disease-associated loci. The component number, P-value, and corresponding GWAS disease or traits are listed.")   
         ),
         conditionalPanel("input.tabs == 'Table 6'", # Originally tXX
                          HTML("<h3>Table 6</h3><br>SNP-based heritability enrichment for each component. Proportion of heritability and enrichment statistics for 18 selected complex traits that can be attributed to each sparse component from the FF data.")
         ),
         conditionalPanel("input.tabs == 'Table 7'", # Originally t4
-                         HTML("<h3>Table 4</h3><br>Trans-eQTLs detected in Fairfax data (FF) at FDR < 0.15. The matrix-eQTL output with SNP, component number, beta, t-stat, P-value and FDR are listed here. <br><em>Note: </em>The trans-eSNPs are not LD-pruned.")
+                         HTML("<h3>Table 7</h3><br>Trans-eQTLs detected in Fairfax data (FF) at FDR < 0.15. The matrix-eQTL output with SNP, component number, beta, t-stat, P-value and FDR are listed here. <br><em>Note: </em>The trans-eSNPs are not LD-pruned.")
         ),
         conditionalPanel("input.tabs == 'Table 8'", # Originally t5 
                          HTML("<h3>Table 8</h3><br>Trans-eQTLs detected in Cardiogenics data (CG) at FDR < 0.15. The matrix-eQTL output with SNP, component number, beta, t-stat, P-value and FDR are listed here.<br><em>Note: </em>The trans-eSNPs are not LD-pruned.")
