@@ -40,6 +40,7 @@ ggsave("~/Desktop/Tensor_myeloid/TF_enrichment_plot.png",
          theme(legend.title.align=0.5),
        dpi=400, height = 15, width=15)
 
+ 
 # Top TFs
 top50 <- sort(rowMeans(abs(dat.cast)), decreasing = T)[1:50] %>% names()
 
@@ -57,15 +58,48 @@ hm2 <- heatmaply(dat.cast[top50,],
                 subplot_widths = c(.95,.05),
                 # file = "TF_enrichment_plot.png",
                 return_ppxpy = T) 
-hm2
-
-
+hm2 
 ggsave("~/Desktop/Tensor_myeloid/top50TF_enrichment_plot.png", 
        hm2$p + labs(title="Transcription Factor Enrichment (Top 50)",
                    x= paste0("Component"),
                    y=paste0("Transcription Factor")) + 
          theme(legend.title.align=0.5),
        dpi=400, height = 10, width=15)
+
+heatmap(as.matrix(dat.cast), 
+        main = "Transcription Factor Enrichment", 
+        scale="none", 
+        col=gplots::redgreen(75))  
+
+
+library(ggplot2) 
+selected.TFs <- c("IRF1","AP1","STAT1","NFKB1","NF-kappaB","USF1","SPI1","IRF2","CTCF","MEF2A","CEBPA") %>% rev()
+dat.select <- subset(dat, TF %in% selected.TFs & isSig==1)  
+dat.select[is.na(dat.select$`Z-score`),"Z-score"] <-0
+dat.select[abs(dat.select$`Z-score`)==Inf,"Z-score"] <-0
+ 
+# Get the number of data points per 
+(dat.select %>% group_by(TF, Component) %>% tally())$n %>% max()
+
+# Order rows
+hc.rows <- hclust(dist(dat.cast))
+dat.select$TF <- factor(dat.select$TF, levels = selected.TFs, labels = selected.TFs, ordered = T)
+
+# Order cols
+# hc.cols <- hclust(dist(t(dat.cast))) 
+ordered.components <- gsub("C_","",hc.cols$labels[hc.cols$order])
+dat.select$Component <- factor(dat.select$Component, levels = ordered.components, labels = ordered.components, ordered = T)
+
+ggplot(data = dat.select, aes(y=TF, x=Component, level=`Z-score`)) +
+  geom_raster(aes(fill=`Z-score`), interpolate = T) +
+  # geom_tile(aes(fill=`Z-score`)) +
+  # stat_density(aes(fill = `Z-score`), geom = "raster", position = "identity")
+  theme_classic() + 
+  scale_fill_gradientn(colours = c("purple","black","yellow")) +
+  theme(axis.text.x = element_text(angle = 50, hjust = 1),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "black", colour = NA))
 
 
 # Using raster
