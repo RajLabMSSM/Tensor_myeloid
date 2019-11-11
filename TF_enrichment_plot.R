@@ -90,7 +90,7 @@ dat.select$TF <- factor(dat.select$TF, levels = selected.TFs, labels = selected.
 ordered.components <- gsub("C_","",hc.cols$labels[hc.cols$order])
 dat.select$Component <- factor(dat.select$Component, levels = ordered.components, labels = ordered.components, ordered = T)
 
-ggplot(data = dat.select, aes(y=TF, x=Component, level=`Z-score`)) +
+rp <- ggplot(data = dat.select, aes(y=TF, x=Component, level=`Z-score`)) +
   geom_raster(aes(fill=`Z-score`), interpolate = T) +
   # geom_tile(aes(fill=`Z-score`)) +
   # stat_density(aes(fill = `Z-score`), geom = "raster", position = "identity")
@@ -99,8 +99,9 @@ ggplot(data = dat.select, aes(y=TF, x=Component, level=`Z-score`)) +
   theme(axis.text.x = element_text(angle = 50, hjust = 1),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), 
-        panel.background = element_rect(fill = "black", colour = NA))
-
+        panel.background = element_rect(fill = "black", colour = NA)) + 
+  labs(title = "Transcription Factor Enrichment", y="Transcription Factor")
+ggsave("./TF_raster_plot.png",rp,dpi = 400, width = 10)
 
 # Using raster
 # library(tidyverse)

@@ -26,9 +26,16 @@ try({
 
 paperTitle <- "'Tensor Decomposition for Stimulated Monocyte and Macrophage Gene Expression Identifies Neurodegenerative Disease-specific Trans-eQTLs'"
 abstract <- "<br>Recent human genetic studies suggest that cells of the innate immune system have a primary role in the pathogenesis of neurodegenerative diseases. However, the results from these studies often do not elucidate how the genetic variants affect the biology of these cells to modulate disease risk. Here, we applied a tensor decomposition method to uncover disease-associated gene networks linked to distal genetic variation in stimulated human monocytes and macrophages gene expression profiles. We report robust evidence that some disease-associated genetic variants affect the expression of multiple genes in trans. These include a Parkinson’s disease locus influencing the expression of genes mediated by a protease that controls lysosomal function, and Alzheimer’s disease loci influencing the expression of genes involved in type 1 interferon signaling, myeloid phagocytosis, and complement cascade pathways. Overall, we uncover gene networks in induced innate immune cells linked to disease-associated genetic variants, which may help elucidate the underlying biology of disease." 
-authors <- HTML("<h4>Authors</h4>Satesh Ramdhani, Elisa Navarro, Evan Udine, Brian M. Schilder, Madison Parks, and Towfique Raj* <br>
-<h4>Affiliations</h4>Ronald M. Loeb Center for Alzheimers Disease,<br>Department of Neuroscience and Friedman Brain Institute,<br>Department of Genetics and Genomic Sciences,<br>Icahn School of Medicine at Mount Sinai, New York, New York, USA.<br>
-<h4>*Corresponding author</h4> towfique.raj@mssm.edu (T.R.)") 
+authors <- HTML("<h4>Authors</h4>
+Satesh Ramdhani<sup>1-3</sup>, Elisa Navarro<sup>1-3</sup>, Evan Udine<sup>1-3</sup>, Anastasia G. Efthymiou<sup>1-3</sup>, Brian M. Schilder<sup>1-3</sup>, Madison Parks<sup>1-3</sup>, Alison Goate<sup>1-3</sup>, and Towfique Raj<sup>1-3</sup>*
+<br>
+<h4>Affiliations</h4>
+<sup>1</sup>Ronald M. Loeb Center for Alzheimer’s Disease<br>
+<sup>2</sup>Nash Family Department of Neuroscience and Friedman Brain Institute<br>
+<sup>3</sup>Department of Genetics and Genomic Sciences<br><br>
+Icahn School of Medicine at Mount Sinai<br>New York, New York, USA
+<br>
+<h4>Corresponding author *</h4>towfique.raj@mssm.edu") 
 fig1Path <- tags$img(src="figures/fig1.png",height="400px")
 
 ui <- fluidPage( 
