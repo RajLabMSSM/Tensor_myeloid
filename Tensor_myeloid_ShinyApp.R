@@ -136,7 +136,18 @@ translate <- function(tabNum){
          "3"=5, "XX"=6, "4"=7, "5"=8, "6"=9, "7"=10)
   return(toString(newNumber))
 } 
-
+# 
+# convert_to_suppTables <- function(){ 
+#   for(n in c(2,3,4,5,6,7,"XX","XXX")){
+#     tabNum <- n
+#     tn <- translate(n)
+#     print(tn) 
+#     dat <- read.delim(paste("supp_tables/SUPPLEMENTARY_TABLE_",toString(tabNum),".txt", sep=""), 
+#                       fill=NA, header=T, stringsAsFactors=F, na.strings = "NA")
+#     openxlsx::write.xlsx(dat,paste0("supp_excel/S",tn,"_Table.xlsx"))
+#   } 
+# }
+#  
 
 server <- function(input, output, session) {  
   # Save named list of genes/scores
